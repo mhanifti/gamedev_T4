@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cthn4acv3bfyi"]
+
+[ext_resource type="Script" uid="uid://c6535v7x4wor7" path="res://scenes/falling_object.gd" id="1_2tq7k"]
+[ext_resource type="Texture2D" uid="uid://drwq8wc2pvkoy" path="res://assets/kenney_platformerpack/PNG/Enemies/wormPink.png" id="2_pt1q7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ad4t1"]
+radius = 29.0
+height = 120.0
+
+[node name="FallingWorm" type="RigidBody2D" unique_id=1866588351]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_2tq7k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1363264995]
+position = Vector2(-40, 0)
+rotation = 4.712389
+texture = ExtResource("2_pt1q7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=420424546]
+position = Vector2(2, -3)
+shape = SubResource("CapsuleShape2D_ad4t1")
+
+[connection signal="body_entered" from="." to="." method="_on_FallArea_body_entered"]
