@@ -1,4 +1,4 @@
-extends Area2D
+extends LinkButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +10,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_Area_Trigger_body_entered(body):
-	if body.get_name() == "Player":
-		Global.curLevel += 1
-		get_tree().change_scene_to_file(str("res://scenes/Level" + str(Global.curLevel) + ".tscn"))
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(str("res://scenes/Level" + str(Global.curLevel) + ".tscn"))

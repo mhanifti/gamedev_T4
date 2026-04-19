@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_4p0dt"]
 [ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_qwp14"]
-[ext_resource type="PackedScene" uid="uid://bw67li1nttqf7" path="res://scenes/LoseCondition.tscn" id="3_xpq2v"]
+[ext_resource type="PackedScene" uid="uid://bw67li1nttqf7" path="res://scenes/GUI/LoseCondition.tscn" id="3_xpq2v"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="4_0jmjk"]
-[ext_resource type="PackedScene" uid="uid://m470c23eieb4" path="res://scenes/WinCondition.tscn" id="5_v8268"]
+[ext_resource type="PackedScene" uid="uid://m470c23eieb4" path="res://scenes/GUI/WinCondition.tscn" id="5_v8268"]
 [ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/spawner.gd" id="6_qwp14"]
 [ext_resource type="PackedScene" uid="uid://cthn4acv3bfyi" path="res://scenes/FallingWorm.tscn" id="7_qwp14"]
+[ext_resource type="PackedScene" uid="uid://i3f22vcm0cuk" path="res://scenes/Live Counter.tscn" id="8_xpq2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
 texture = ExtResource("2_qwp14")
@@ -81,3 +82,9 @@ obstacle = ExtResource("7_qwp14")
 [node name="WinCondition" parent="." unique_id=2063274050 instance=ExtResource("5_v8268")]
 position = Vector2(1506, -115.99999)
 scale = Vector2(1.8400037, 3.0399997)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1721843327]
+
+[node name="LiveCounter" parent="CanvasLayer" unique_id=936124602 instance=ExtResource("8_xpq2v")]
+offset_right = 1.0
+offset_bottom = 23.0

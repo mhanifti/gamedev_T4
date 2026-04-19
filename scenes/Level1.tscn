@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_bwv4p"]
-[ext_resource type="PackedScene" uid="uid://bw67li1nttqf7" path="res://scenes/LoseCondition.tscn" id="3_odhdn"]
+[ext_resource type="PackedScene" uid="uid://bw67li1nttqf7" path="res://scenes/GUI/LoseCondition.tscn" id="3_odhdn"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="4_lrl65"]
-[ext_resource type="PackedScene" uid="uid://scaobuknok84" path="res://scenes/WinAndNextLevel.tscn" id="5_76388"]
+[ext_resource type="PackedScene" uid="uid://scaobuknok84" path="res://scenes/GUI/WinAndNextLevel.tscn" id="5_76388"]
 [ext_resource type="PackedScene" uid="uid://ca1o5o8vah73t" path="res://scenes/FallingFish.tscn" id="6_76388"]
 [ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/spawner.gd" id="7_svatc"]
+[ext_resource type="PackedScene" uid="uid://i3f22vcm0cuk" path="res://scenes/Live Counter.tscn" id="8_ecr63"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
 texture = ExtResource("2_bwv4p")
@@ -81,3 +82,7 @@ scale = Vector2(-1.8265538, -3.0039525)
 position = Vector2(936, -844)
 script = ExtResource("7_svatc")
 obstacle = ExtResource("6_76388")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1265581132]
+
+[node name="LiveCounter" parent="CanvasLayer" unique_id=1482373875 instance=ExtResource("8_ecr63")]

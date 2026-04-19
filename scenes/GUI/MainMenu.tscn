@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bjrgilkw6m3gd"]
+
+[ext_resource type="Script" uid="uid://bxmnsbbk2e44x" path="res://scenes/GUI/GUI_Script/play_button.gd" id="1_nqrrg"]
+[ext_resource type="Script" uid="uid://dev8rxp3wk4yo" path="res://scenes/GUI/GUI_Script/stage_button.gd" id="2_l8ucs"]
+[ext_resource type="Texture2D" uid="uid://dhsqj8dybb7fq" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="3_b4rkb"]
+
+[node name="MainMenu" type="MarginContainer" unique_id=90315295]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1241907640]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=2016277087]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=461439256]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Judul Game"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=18074176]
+layout_mode = 2
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1963833386]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "New Game"
+underline = 1
+script = ExtResource("1_nqrrg")
+
+[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=414212726]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Stage Select"
+underline = 1
+script = ExtResource("2_l8ucs")
+scene_to_load = "StageSelect"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1562643818]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=1548025467]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+texture = ExtResource("3_b4rkb")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" method="_on_pressed"]

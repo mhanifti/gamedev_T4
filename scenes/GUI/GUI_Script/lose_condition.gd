@@ -1,7 +1,5 @@
 extends Area2D
 
-@export var screenLevel: String = "WinScreen"
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -14,4 +12,9 @@ func _process(delta: float) -> void:
 
 func _on_Area_Trigger_body_entered(body):
 	if body.get_name() == "Player":
-		get_tree().change_scene_to_file(str("res://scenes/" + screenLevel + ".tscn"))
+		Global.lives -= 1
+		if (Global.lives == 0):
+			Global.lives = 3
+			get_tree().change_scene_to_file(str("res://scenes/GUI/GameOver.tscn"))
+		else:
+			get_tree().change_scene_to_file(str("res://scenes/Level" + str(Global.curLevel) + ".tscn"))
